@@ -1,0 +1,13 @@
+.intro-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    h2 {
+      max-width: 45%;
+      text-align: center;
+      line-height: 1;
+      font-size: 2vw;
+    }
+  }
