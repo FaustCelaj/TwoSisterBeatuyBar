@@ -140,7 +140,7 @@ svg {
     }
   }
 
-  .footer {
+  /* .footer {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -148,7 +148,7 @@ svg {
     @media (max-width: 1024px) {
       flex-direction: column;
       gap: 6px;
-    }
+    } */
 
     p {
       margin: 0;
@@ -161,4 +161,4 @@ svg {
       border-radius: 4px;
     }
   }
-}
+/* } */
