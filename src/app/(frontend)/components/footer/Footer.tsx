@@ -1,11 +1,11 @@
-import './Footer.scss'
+import styles from './Footer.module.scss'
 import Content from './Content'
 
 export default function Footer() {
   return (
-    <div className="footer-wrapper">
-      <div className="footer-sticky-container">
-        <div className="footer-sticky-content">
+    <div className={styles.footerWrapper}>
+      <div className={styles.footerStickyContainer}>
+        <div className={styles.footerStickyContent}>
           <Content />
         </div>
       </div>

@@ -1,0 +1,19 @@
+.paragraph {
+    text-align: start;
+    line-height: 1;
+    font-size: 4vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    max-width: 80%;
+    .word {
+        margin-right: 12px;
+        margin-top: 12px;
+        position: relative;
+
+        .shadow {
+            position: absolute;
+            opacity: 0.1;
+        }
+    }
+}
