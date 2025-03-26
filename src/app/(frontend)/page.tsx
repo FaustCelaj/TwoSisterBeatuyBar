@@ -1,8 +1,8 @@
 'use client'
 
-import Intro from './components/Intro'
-import Footer from './components/footer/Footer'
-import AboutIntro from './components/AboutIntro'
+import TemplateSpace from './components/TemplateSpace'
+import Footer from './components/layout/footer/Footer'
+import AboutIntro from './components/section/aboutIntro/AboutIntro'
 import Lenis from 'lenis'
 import { useEffect } from 'react'
 
@@ -23,7 +23,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <Intro />
+      <TemplateSpace />
       <AboutIntro value={aboutParagraphText} />
       <Footer />
     </main>

@@ -1,0 +1,68 @@
+// EmployeeCard.module.scss
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  max-width: 452px; // make responsive to grid to fill
+  background-color: #f8f9fa;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 80%;
+  overflow: visible;
+}
+
+.bgShape {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 95%;
+  background-color: #b6d7e4;
+  border-radius: 20px 20px 0 0;
+  z-index: 2;
+}
+
+.headshot {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-top: -12px;
+}
+
+.employeeText {
+  padding-top: 12px;
+  max-width: 95%;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #03045e;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2px;
+    color: #03045e;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #03045e;
+    line-height: 1.3;
+    margin-top: 6px;
+  }
+}
