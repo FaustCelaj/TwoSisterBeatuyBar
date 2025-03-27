@@ -30,10 +30,12 @@ const team = [
 
 export default function TeamSection() {
   return (
-    <div className={styles.teamContainer}>
-      {team.map((member, index) => (
-        <EmployeeCard key={index} {...member} />
-      ))}
+    <div className={styles.sectionWrapper}>
+      <div className={styles.teamContainer}>
+        {team.map((member, index) => (
+          <EmployeeCard key={index} {...member} />
+        ))}
+      </div>
     </div>
   )
 }

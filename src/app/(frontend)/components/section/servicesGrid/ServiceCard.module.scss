@@ -1,0 +1,124 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 2rem;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.hoverBorder {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: -1;
+}
+
+.card.hovered .hoverBorder {
+  opacity: 1;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 3.8/4;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card.hovered .image {
+  transform: scale(1.03);
+}
+
+.serviceText {
+  padding: 1.5rem 1rem 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 260px;
+
+  h3 {
+    max-width: 19vw;
+    font-size: 3vw;
+    font-weight: 400;
+    margin: 0.7rem 0 1.5rem 0;
+    color: #222;
+  }
+  h4 {
+    max-width: 7vw;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 0 1.5rem 0;
+    color: #222;
+  }
+}
+
+.learnMoreBtn {
+  display: inline-block;
+  background-color: transparent;
+  color: #222;
+  border: 1px solid #222;
+  padding: 0.7rem 2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #222;
+    color: white;
+  }
+}
+
+// @media (max-width: 1200px) {
+//   .imageWrapper {
+//     aspect-ratio: 5/4;
+//   }
+
+//   .serviceText h3 {
+//     font-size: 1.3rem;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .card {
+//     margin-bottom: 2.5rem;
+//   }
+
+//   .hoverBorder {
+//     top: -10px;
+//     left: -10px;
+//     right: -10px;
+//     bottom: -10px;
+//   }
+
+//   .serviceText h3 {
+//     font-size: 1.2rem;
+//     margin-bottom: 1.2rem;
+//   }
+
+//   .learnMoreBtn {
+//     padding: 0.6rem 1.5rem;
+//     font-size: 0.9rem;
+//   }
+// }
