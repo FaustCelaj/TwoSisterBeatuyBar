@@ -1,9 +1,11 @@
 import React from 'react'
 import './styles.css'
+import Footer from './components/layout/footer/Footer'
+import SmoothScrollProvider from './components/SmoothScrollProvider'
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  description: 'Two Sisters Beauty Bar - Professional Skincare & Beauty Services',
+  title: 'Two Sisters Beauty Bar',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
@@ -11,8 +13,11 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en">
-      <body>
-        <main>{children}</main>
+      <body suppressHydrationWarning>
+        <SmoothScrollProvider>
+          <main>{children}</main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   )

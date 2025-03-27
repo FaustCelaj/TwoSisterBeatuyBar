@@ -1,0 +1,55 @@
+.utl__button .cb-ts__item {
+    transition: none
+  }
+  .utl__button__bg {
+    border: none
+  }
+  
+  .utl__button__bg::after {
+    content: "";
+    background-color: transparent;
+    transition: all .4s cubic-bezier(.165,.84,.44,1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    pointer-events: none;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    transform: scale(1);
+  }
+  
+  @media (hover:hover) and (pointer: fine) {
+    .utl__button:hover .utl__button__bg,
+    .utl__button:focus .utl__button__bg {
+      width: 100%;
+      color: var(--box-full-color);
+    }
+    [cb-textreveal-style=kontakt] .utl__button:hover .cb-ts__item {
+      color: var(--box-full-color);
+    }
+    .utl__button:hover .utl__button__bg::after,
+    .utl__button:focus .utl__button__bg::after {
+      background-color: var(--black);
+      border-color: var(--black);
+    }
+  
+    .utl__button:hover .utl__button__text,
+    .utl__button:focus .utl__button__text {
+      transform: translateX(-30px);
+      color: var(--box-full-color);
+    }
+  
+    .utl__button:focus {
+      outline: none
+    }
+  }
+  
+  .utl__button:active .utl__button__bg::after {
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+  }
