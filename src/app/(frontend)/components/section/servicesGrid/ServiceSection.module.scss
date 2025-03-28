@@ -1,31 +1,51 @@
-.sectionWrapper {
+@import '../../../styles/variables';
+
+.section {
+  padding: $section-padding-desktop 0;
   width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 0 20px;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: $section-padding-tablet 0;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: $section-padding-mobile 0;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 60px;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: 0 40px;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 0 20px;
+  }
 }
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
   width: 100%;
-  max-width: 2000px;
-}
 
-@media (max-width: 1024px) {
-  .servicesGrid {
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .sectionWrapper {
-    padding: 3rem 1rem;
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 
-  .servicesGrid {
+  @media (max-width: $breakpoint-md) {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 60px;
   }
 }

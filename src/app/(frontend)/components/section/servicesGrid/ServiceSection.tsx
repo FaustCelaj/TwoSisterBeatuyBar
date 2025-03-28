@@ -1,48 +1,46 @@
 import styles from './ServiceSection.module.scss'
-import FacialImage from '../../../public/images/Facial_care.jpg'
-import LashesImage from '../../../public/images/Lashes_and_brows.jpg'
-import NailImage from '../../../public/images/Nail_Care.jpg'
-import BodyImage from '../../../public/images/Body Care.jpg'
-import WaxingImage from '../../../public/images/waxing.jpg'
-import LaserImage from '../../../public/images/Laser_removal.jpg'
-// Import additional service images as needed
 import ServiceCard from './ServiceCard'
 
-// Example services data - you can expand this with your actual services
 const services = [
   {
-    image: FacialImage,
     serviceTitle: 'Facial Care',
+    serviceDescription:
+      'Hi! I’m one of the sisters and the proud owner of Two Sisters Beauty Bar. With 7 years as a medical aesthetician, I’m passionate about skin health and client education. I specialize in Hydrafacials, Green Peels & lash lifts. Can’t wait to see you soon!',
     link: '/services/facial-care',
     serviceCount: 8,
   },
   {
-    image: NailImage,
     serviceTitle: 'Nail Care',
+    serviceDescription:
+      'Hi! I’m one of the sisters and the proud owner of Two Sisters Beauty Bar. With 7 years as a medical aesthetician, I’m passionate about skin health and client education. I specialize in Hydrafacials, Green Peels & lash lifts. Can’t wait to see you soon!',
     link: '/services/facial-care',
     serviceCount: 9,
   },
   {
-    image: BodyImage,
     serviceTitle: 'Body Care',
+    serviceDescription:
+      'Hi! I’m one of the sisters and the proud owner of Two Sisters Beauty Bar. With 7 years as a medical aesthetician, I’m passionate about skin health and client education. I specialize in Hydrafacials, Green Peels & lash lifts. Can’t wait to see you soon!',
     link: '/services/facial-care',
     serviceCount: 5,
   },
   {
-    image: LashesImage,
     serviceTitle: 'Lashes & Brows',
+    serviceDescription:
+      'Hi! I’m one of the sisters and the proud owner of Two Sisters Beauty Bar. With 7 years as a medical aesthetician, I’m passionate about skin health and client education. I specialize in Hydrafacials, Green Peels & lash lifts. Can’t wait to see you soon!',
     link: '/services/facial-care',
     serviceCount: 12,
   },
   {
-    image: WaxingImage,
     serviceTitle: 'Waxing',
+    serviceDescription:
+      'Hi! I’m one of the sisters and the proud owner of Two Sisters Beauty Bar. With 7 years as a medical aesthetician, I’m passionate about skin health and client education. I specialize in Hydrafacials, Green Peels & lash lifts. Can’t wait to see you soon!',
     link: '/services/facial-care',
     serviceCount: 11,
   },
   {
-    image: LaserImage,
-    serviceTitle: 'Coming soon',
+    serviceTitle: 'Laser Hair Removal',
+    serviceDescription:
+      'Hi! I’m one of the sisters and the proud owner of Two Sisters Beauty Bar. With 7 years as a medical aesthetician, I’m passionate about skin health and client education. I specialize in Hydrafacials, Green Peels & lash lifts. Can’t wait to see you soon!',
     link: '/services/facial-care',
     serviceCount: 0,
   },
@@ -50,11 +48,20 @@ const services = [
 
 export default function ServiceSection() {
   return (
-    <section className={styles.sectionWrapper}>
-      <div className={styles.servicesGrid}>
-        {services.map((service, index) => (
-          <ServiceCard key={index} {...service} />
-        ))}
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.heading}>
+          <h2>Meet Our Team</h2>
+          <p>
+            Our passionate team of experienced professionals is committed to delivering exceptional
+            beauty services tailored to your unique needs.
+          </p>
+        </div>
+        <div className={styles.servicesGrid}>
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -1,20 +1,19 @@
 'use client'
 
 import { useState } from 'react'
-import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import styles from './ServiceCard.module.scss'
 
 type ServiceCardProps = {
-  image: StaticImageData
   serviceTitle: string
+  serviceDescription: string
   link?: string
   serviceCount: number
 }
 
 export default function ServiceCard({
-  image,
   serviceTitle,
+  serviceDescription,
   link = '#',
   serviceCount,
 }: ServiceCardProps) {
@@ -26,21 +25,20 @@ export default function ServiceCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={styles.hoverBorder}></div>
-      <div className={styles.imageWrapper}>
-        <Image
-          src={image}
-          alt={`${serviceTitle} service image`}
-          className={styles.image}
-          priority
-        />
-      </div>
       <div className={styles.serviceText}>
-        <h3>{serviceTitle}</h3>
+        <div className={styles.headingContainer}>
+          <h3>{serviceTitle}</h3>
+          {serviceCount > 0 && <p>{serviceCount} services</p>}
+          {serviceCount === 0 && <p>Coming soon</p>}
+        </div>
+        <p>{serviceDescription}</p>
+        {serviceCount > 0 && (
+          <Link href={link} className={styles.viewButton}>
+            Explore Services
+          </Link>
+        )}
+        {serviceCount === 0 && <span className={styles.viewButton}>Coming Soon</span>}
       </div>
-      <Link href={link} className={styles.learnMoreBtn}>
-        View Treatments
-      </Link>
     </div>
   )
 }

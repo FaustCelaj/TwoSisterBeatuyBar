@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.css'
+import './styles/main.scss'
 import Footer from './components/layout/footer/Footer'
 import SmoothScrollProvider from './components/SmoothScrollProvider'
 
@@ -16,7 +16,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       <body suppressHydrationWarning>
         <SmoothScrollProvider>
           <main>{children}</main>
-          <Footer />
+          {/* <Footer /> */}
         </SmoothScrollProvider>
       </body>
     </html>

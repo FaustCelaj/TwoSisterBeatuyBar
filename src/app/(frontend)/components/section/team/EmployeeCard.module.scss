@@ -1,91 +1,123 @@
-// EmployeeCard.module.scss
+@import '../../../styles/variables';
 
 .card {
   display: flex;
   flex-direction: column;
-  text-align: start;
   width: 100%;
-  background-color: #f8f9fa;
-  padding: 0 24px 24px;
-  margin-bottom: 12px;
-  border-radius: 16px;
+  background-color: $box-full-color;
+  border-radius: $border-radius-lg;
   position: relative;
+  overflow: visible;
+  transition: transform $transition-medium $transition-timing;
   z-index: 1;
+}
+
+.hoverBorder {
+  position: absolute;
+  inset: -8px;
+  border: 1px solid $black;
+  border-radius: calc($border-radius-lg + 8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $transition-medium $transition-timing, transform $transition-medium $transition-timing;
+  transform: scale(0.95);
+  z-index: -1;
+}
+
+.card.hovered .hoverBorder {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .imageWrapper {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  aspect-ratio: 2/3;
   width: 100%;
-  padding-top: 120%;
-  overflow: visible;
+  overflow: hidden;
+  // margin-top: -10%;
+  border-radius: $border-radius-lg $border-radius-lg 0 0;
 }
 
-.bgShape {
+.imageGradient {
+  background-image: linear-gradient(to bottom, rgba($box-full-color, 0.03), $box-full-color);
+  height: 25%;
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 95%;
-  background-color: #b6d7e4;
-  border-radius: 20px 20px 0 0;
+  inset: auto 0 0 0;
   z-index: 2;
 }
 
-.headshot {
-  position: absolute;
-  bottom: 0;
-  z-index: 3;
+.image {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  margin-top: -12px;
+  transition: transform $transition-medium $transition-timing;
+}
+
+.card.hovered .image {
+  transform: scale(1.05);
 }
 
 .employeeText {
-  padding-top: 12px;
-  width: 95%;
+  padding: 1.8rem 2.2rem 2.5rem;
+  position: relative;
+  z-index: 2;
+  margin-top: -10px;
+  overflow: hidden;
+  border-radius: 0 0 $border-radius-lg $border-radius-lg;
 
   h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #03045e;
-    margin-bottom: 4px;
-    margin-top: 12px;
+    font-size: fluid-type(20, 32);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: $black;
+    line-height: 1.2;
   }
 
   h4 {
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-bottom: 8px;
-    margin-top: 0;
-    color: #03045e;
+    font-size: fluid-type(16, 20);
+    font-weight: 400;
+    margin-bottom: 1.4rem;
+    color: $black;
+    opacity: 0.7;
   }
 
   p {
-    font-size: 0.9rem;
-    color: #03045e;
-    line-height: 1.3;
-    margin-top: 6px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $black;
+    margin: 0;
   }
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
+@media (max-width: $breakpoint-lg) {
+  .imageWrapper {
+    aspect-ratio: 4/5;
+  }
+  
   .employeeText {
+    padding: 1.5rem 1.8rem 2rem;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .imageWrapper {
+    aspect-ratio: 3/4;
+  }
+  
+  .employeeText {
+    padding: 1.2rem 1.5rem 1.8rem;
+    
     h3 {
-      font-size: 1.3rem;
+      font-size: fluid-type(18, 24);
     }
     
     h4 {
-      font-size: 1.1rem;
+      font-size: fluid-type(15, 18);
+      margin-bottom: 1rem;
     }
-  }
-}
-
-@media (max-width: 767px) {
-  .card {
-    max-width: 100%;
+    
+    p {
+      font-size: 15px;
+    }
   }
 }

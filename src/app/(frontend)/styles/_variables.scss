@@ -1,0 +1,84 @@
+// Colors
+$white: #f4e6cd;
+$black: #1e211e;
+$primary: #888151;
+$primary-hover: #a29a65;
+$border: rgba(30, 33, 30, 0.2);
+$box: rgba(165, 143, 100, 0.09);
+$text-medium: $black;
+$text-light: #b4b4b4;
+$box-full-color: #edddc3;
+$transparent: transparent;
+$red: #8c3b28;
+$primary-dark: #7b7447;
+
+// Brand colors from comment
+$brand-dark: #303b46;
+$brand-medium: #798e95;
+$brand-light: #ffffff;
+
+// Typography
+$body-font:
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif;
+$heading-font: $body-font;
+
+// Base sizes
+$base-font-size: 16px;
+$base-line-height: 1.6;
+
+// Letter spacing
+$spacing-letter-spacing-h1: -0.045em;
+$spacing-letter-spacing-h2: -0.03em;
+
+// Line height
+$spacing-line-height-h1: 0.9em;
+$spacing-line-height-h2: 1em;
+
+// Spacing
+$spacing-unit: 1rem;
+$spacing-xs: $spacing-unit * 0.25;
+$spacing-sm: $spacing-unit * 0.5;
+$spacing-md: $spacing-unit;
+$spacing-lg: $spacing-unit * 1.5;
+$spacing-xl: $spacing-unit * 2;
+$spacing-xxl: $spacing-unit * 4;
+
+// Section padding
+$section-padding-desktop: 120px;
+$section-padding-tablet: 100px;
+$section-padding-mobile: 80px;
+
+// Border radius
+$border-radius: 4px;
+$border-radius-lg: 8px;
+
+// Breakpoints
+$breakpoint-sm: 480px; // Mobile
+$breakpoint-md: 768px; // Tablet
+$breakpoint-lg: 992px; // Small desktop
+$breakpoint-xl: 1280px; // Large desktop
+$breakpoint-xxl: 1440px; // Extra large desktop
+
+// Z-index layers
+$z-back: -1;
+$z-normal: 1;
+$z-menu: 100;
+$z-modal: 1000;
+
+// Transitions
+$transition-fast: 0.2s;
+$transition-medium: 0.4s;
+$transition-slow: 0.6s;
+$transition-timing: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+// Container widths
+$container-max-width: 2000px;
+$container-medium-width: 1320px;
+$container-small-width: 1140px;

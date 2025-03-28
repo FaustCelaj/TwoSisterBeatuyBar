@@ -1,55 +1,190 @@
-.utl__button .cb-ts__item {
-    transition: none
-  }
-  .utl__button__bg {
-    border: none
+@import '../../../styles/variables';
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  padding: 0 30px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  
+  &:focus {
+    outline: none;
   }
   
-  .utl__button__bg::after {
-    content: "";
-    background-color: transparent;
-    transition: all .4s cubic-bezier(.165,.84,.44,1);
+  .buttonText {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  
+  .buttonIcon {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+  }
+  
+  .buttonBg {
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-    display: block;
-    pointer-events: none;
+    bottom: 0;
+    width: 42px;
     border-radius: 50px;
-    border: 1px solid var(--border);
-    transform: scale(1);
-  }
-  
-  @media (hover:hover) and (pointer: fine) {
-    .utl__button:hover .utl__button__bg,
-    .utl__button:focus .utl__button__bg {
-      width: 100%;
-      color: var(--box-full-color);
-    }
-    [cb-textreveal-style=kontakt] .utl__button:hover .cb-ts__item {
-      color: var(--box-full-color);
-    }
-    .utl__button:hover .utl__button__bg::after,
-    .utl__button:focus .utl__button__bg::after {
-      background-color: var(--black);
-      border-color: var(--black);
-    }
-  
-    .utl__button:hover .utl__button__text,
-    .utl__button:focus .utl__button__text {
-      transform: translateX(-30px);
-      color: var(--box-full-color);
-    }
-  
-    .utl__button:focus {
-      outline: none
+    z-index: 1;
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 50px;
+      border: 1px solid $border;
+      background-color: transparent;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      pointer-events: none;
     }
   }
   
-  .utl__button:active .utl__button__bg::after {
-    top: 4px;
-    right: 4px;
-    bottom: 4px;
-    left: 4px;
+  // Hover styles
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .buttonText {
+        transform: translateX(-30px);
+        color: $white;
+      }
+      
+      .buttonBg {
+        width: 100%;
+        
+        &::after {
+          background-color: $black;
+          border-color: $black;
+        }
+      }
+    }
   }
+  
+  &:active {
+    .buttonBg::after {
+      top: 4px;
+      right: 4px;
+      bottom: 4px;
+      left: 4px;
+    }
+  }
+}
+
+// Size variants
+.small {
+  height: 36px;
+  font-size: 14px;
+  
+  .buttonBg {
+    width: 36px;
+  }
+}
+
+.medium {
+  height: 42px;
+  font-size: 16px;
+  
+  .buttonBg {
+    width: 42px;
+  }
+}
+
+.large {
+  height: 52px;
+  font-size: 18px;
+  
+  .buttonBg {
+    width: 52px;
+  }
+}
+
+// Style variants
+.primary {
+  color: $black;
+  background-color: transparent;
+  
+  .buttonBg {
+    background-color: $primary;
+    
+    &::after {
+      border-color: $primary;
+    }
+  }
+  
+  &:hover {
+    .buttonBg::after {
+      background-color: $primary-hover;
+      border-color: $primary-hover;
+    }
+  }
+}
+
+.secondary {
+  color: $black;
+  background-color: transparent;
+  
+  .buttonBg {
+    background-color: $white;
+    
+    &::after {
+      border-color: $black;
+    }
+  }
+}
+
+.text {
+  padding: 0;
+  height: auto;
+  color: $black;
+  background-color: transparent;
+  
+  .buttonBg {
+    display: none;
+  }
+  
+  .buttonText {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.2s ease;
+  }
+  
+  &:hover {
+    .buttonText {
+      transform: none;
+      color: $primary;
+      border-bottom-color: $primary;
+    }
+  }
+}
+
+// Icon position
+.hasIcon .buttonText {
+  margin-right: 8px;
+}
+
+.iconLeft {
+  .buttonIcon {
+    margin-left: 0;
+    margin-right: 8px;
+  }
+  
+  .buttonText {
+    margin-right: 0;
+  }
+}

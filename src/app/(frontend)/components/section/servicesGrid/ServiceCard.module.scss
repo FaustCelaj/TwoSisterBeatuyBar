@@ -1,124 +1,81 @@
+@import '../../../styles/variables';
+
 .card {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  background-color: transparent;
-  margin-bottom: 2rem;
+  border-radius: $border-radius-lg;
   padding: 0;
-  position: relative;
   cursor: pointer;
-}
-
-.hoverBorder {
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
-  border: 1px solid #222;
-  border-radius: 8px;
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
-  z-index: -1;
-}
-
-.card.hovered .hoverBorder {
-  opacity: 1;
-}
-
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 8px;
-  aspect-ratio: 3.8/4;
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.card.hovered .image {
-  transform: scale(1.03);
+  background-color: $box-full-color;
 }
 
 .serviceText {
-  padding: 1.5rem 1rem 1rem;
+  padding: 1.5rem 2rem;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 0 0 $border-radius-lg $border-radius-lg;
+}
+
+.headingContainer {
+  display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: baseline;
   justify-content: space-between;
-  height: 260px;
+  width: 100%;
 
   h3 {
-    max-width: 19vw;
-    font-size: 3vw;
-    font-weight: 400;
+    font-size: fluid-type(24, 48);
+    font-weight: 500;
     margin: 0.7rem 0 1.5rem 0;
-    color: #222;
+    color: $black;
+    position: relative;
+    
+    @media (max-width: $breakpoint-lg) {
+      font-size: fluid-type(20, 36);
+    }
   }
-  h4 {
-    max-width: 7vw;
-    font-size: 1rem;
-    font-weight: 400;
-    margin: 0 0 1.5rem 0;
-    color: #222;
+
+  p {
+    font-size: fluid-type(14, 18);
+    color: $black;
   }
 }
 
-.learnMoreBtn {
+.viewButton {
   display: inline-block;
   background-color: transparent;
-  color: #222;
-  border: 1px solid #222;
+  color: $black;
+  border: 1px solid $black;
   padding: 0.7rem 2rem;
-  border-radius: 4px;
+  border-radius: $border-radius;
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
   font-size: 1rem;
-  transition: all 0.2s ease;
-
+  transition: all $transition-fast ease;
+  margin-top: auto;
+  
   &:hover {
-    background-color: #222;
-    color: white;
+    background-color: $black;
+    color: $white;
   }
 }
 
-// @media (max-width: 1200px) {
-//   .imageWrapper {
-//     aspect-ratio: 5/4;
-//   }
+@media (max-width: $breakpoint-lg) {
+  .serviceText h3 {
+    max-width: 30vw;
+  }
+}
 
-//   .serviceText h3 {
-//     font-size: 1.3rem;
-//   }
-// }
-
-// @media (max-width: 768px) {
-//   .card {
-//     margin-bottom: 2.5rem;
-//   }
-
-//   .hoverBorder {
-//     top: -10px;
-//     left: -10px;
-//     right: -10px;
-//     bottom: -10px;
-//   }
-
-//   .serviceText h3 {
-//     font-size: 1.2rem;
-//     margin-bottom: 1.2rem;
-//   }
-
-//   .learnMoreBtn {
-//     padding: 0.6rem 1.5rem;
-//     font-size: 0.9rem;
-//   }
-// }
+@media (max-width: $breakpoint-md) {
+  .serviceText h3 {
+    max-width: 60vw;
+    font-size: fluid-type(20, 32);
+    margin-bottom: 1.2rem;
+  }
+  
+  .imageWrapper {
+    aspect-ratio: 16/9;
+  }
+}
