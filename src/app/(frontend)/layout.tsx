@@ -16,7 +16,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       <body suppressHydrationWarning>
         <SmoothScrollProvider>
           <main>{children}</main>
-          {/* <Footer /> */}
+          <Footer />
         </SmoothScrollProvider>
       </body>
     </html>

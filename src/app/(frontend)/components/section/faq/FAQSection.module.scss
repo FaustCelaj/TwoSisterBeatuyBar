@@ -1,0 +1,35 @@
+@use '../../../styles/variables' as *;
+
+.section {
+    padding: $section-padding-desktop 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    @media (max-width: $breakpoint-lg) {
+      padding: $section-padding-tablet 0;
+    }
+  
+    @media (max-width: $breakpoint-sm) {
+      padding: $section-padding-mobile 0;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 60px;
+  
+    @media (max-width: $breakpoint-lg) {
+      padding: 0 40px;
+    }
+  
+    @media (max-width: $breakpoint-sm) {
+      padding: 0 20px;
+    }
+  }
