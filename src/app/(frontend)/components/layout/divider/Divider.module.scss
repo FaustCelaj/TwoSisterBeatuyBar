@@ -1,0 +1,35 @@
+// Divider.scss
+.divider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    
+    .divider-line {
+      border-radius: 2px;
+      transition: width 0.3s ease-in-out;
+      
+      &:hover {
+        width: 60px; // Expand slightly on hover for interactive effect
+      }
+    }
+  }
+  
+  // For use between sections
+  .section-divider {
+    margin: 3rem auto;
+    
+    .divider-line {
+      background-color: #B9A289; // Beige color similar to the website
+    }
+  }
+  
+  // For smaller dividers within components
+  .component-divider {
+    margin: 1.5rem auto;
+    
+    .divider-line {
+      width: 30px;
+      height: 1px;
+    }
+  }
