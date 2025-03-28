@@ -15,8 +15,3 @@ export default function HomePage() {
     </main>
   )
 }
-
-// colours to add for global
-// #303b46
-//  #798E95
-// #ffffff

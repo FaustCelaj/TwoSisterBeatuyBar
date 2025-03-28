@@ -1,0 +1,187 @@
+@import 'variables';
+
+// Fluid typography functions
+@function fluid-type($min-size, $max-size, $min-screen: 480, $max-screen: 1440) {
+  @return clamp(
+    #{$min-size}px,
+    #{$min-size}px + (#{$max-size} - #{$min-size}) *
+      ((100vw - #{$min-screen}px) / (#{$max-screen} - #{$min-screen})),
+    #{$max-size}px
+  );
+}
+
+// Base typography styles
+html {
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $body-font;
+  font-weight: 400;
+  line-height: $base-line-height;
+  color: $black;
+  background-color: $white;
+
+  // Word wrapping and hyphenation
+  -webkit-hyphenate-limit-chars: 6 3 3;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-lines: 2;
+  -moz-hyphenate-limit-chars: 6 3 3;
+  -ms-hyphenate-limit-lines: 2;
+  -ms-hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+}
+
+// Headings
+h1,
+.h1 {
+  font-size: fluid-type(40, 90);
+  line-height: $spacing-line-height-h1;
+  letter-spacing: $spacing-letter-spacing-h1;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: $spacing-lg;
+}
+
+h2,
+.h2 {
+  font-size: fluid-type(30, 72);
+  line-height: $spacing-line-height-h2;
+  letter-spacing: $spacing-letter-spacing-h2;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: $spacing-md;
+}
+
+h3,
+.h3 {
+  font-size: fluid-type(24, 48);
+  line-height: 1.3;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: $spacing-md;
+}
+
+h4,
+.h4 {
+  font-size: fluid-type(20, 30);
+  line-height: 1.35;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: $spacing-sm;
+}
+
+h5,
+.h5 {
+  font-size: fluid-type(18, 24);
+  line-height: 1.4;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: $spacing-sm;
+}
+
+h6,
+.h6 {
+  font-size: fluid-type(16, 20);
+  line-height: 1.4;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: $spacing-sm;
+}
+
+// Paragraphs
+p {
+  font-size: 16px; // Fixed size for readability
+  line-height: 1.6em;
+  margin-top: 0;
+  margin-bottom: $spacing-md;
+}
+
+.body-large {
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+.body-small {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+// Fluid paragraph class (alternative to fixed size)
+.body-fluid {
+  font-size: fluid-type(14, 18);
+  line-height: 1.6em;
+}
+
+// Links
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color $transition-fast ease;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+// Lists
+ul,
+ol {
+  padding-left: 1.5em;
+  margin-top: 0;
+  margin-bottom: $spacing-md;
+
+  li {
+    margin-bottom: 0.5em;
+  }
+}
+
+// Display text (extra large statements)
+.display-text {
+  font-size: fluid-type(60, 120);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+// Lead text (large paragraph intros)
+.lead-text {
+  font-size: fluid-type(20, 32);
+  line-height: 1.3;
+  max-width: 70ch;
+}
+
+// Utility text classes
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+// Font weight utilities
+.font-light {
+  font-weight: 300;
+}
+.font-regular {
+  font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-bold {
+  font-weight: 700;
+}

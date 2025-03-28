@@ -30,12 +30,22 @@ const team = [
 
 export default function TeamSection() {
   return (
-    <div className={styles.sectionWrapper}>
-      <div className={styles.teamContainer}>
-        {team.map((member, index) => (
-          <EmployeeCard key={index} {...member} />
-        ))}
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.heading}>
+          <h2>Meet Our Team</h2>
+          <p>
+            Our passionate team of experienced professionals is committed to delivering exceptional
+            beauty services tailored to your unique needs.
+          </p>
+        </div>
+
+        <div className={styles.teamGrid}>
+          {team.map((member, index) => (
+            <EmployeeCard key={index} {...member} />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
