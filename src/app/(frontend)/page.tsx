@@ -6,7 +6,7 @@ import FAQSection from './components/section/faq/FAQSection'
 import ServiceSection from './components/section/servicesGrid/ServiceSection'
 
 const aboutParagraphText =
-  'Welcome to Welcome to Two Sisters Beauty Bar, where professional skincare meets personal connection. We founded our spa to create a space where you can relax, rejuvenate, and learn how to keep your skin glowing long after you leave us.'
+  'Welcome to Two Sisters Beauty Bar, where professional skincare meets personal connection. We founded our spa to create a space where you can relax, rejuvenate, and learn how to keep your skin glowing long after you leave us.'
 
 export default function HomePage() {
   return (
@@ -14,7 +14,7 @@ export default function HomePage() {
       <TemplateSpace />
       <AboutIntro value={aboutParagraphText} />
       <ServiceSection />
-      <FAQSection />
+      <FAQSection isHomePage={true} />
       {/* add button to link about page (Meet you aesthicians)*/}
     </main>
   )

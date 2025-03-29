@@ -1,35 +1,50 @@
 @use '../../../styles/variables' as *;
 
 .section {
-    padding: $section-padding-desktop 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-    @media (max-width: $breakpoint-lg) {
-      padding: $section-padding-tablet 0;
-    }
-  
-    @media (max-width: $breakpoint-sm) {
-      padding: $section-padding-mobile 0;
-    }
+  padding: $section-padding-desktop 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px red solid;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: $section-padding-tablet 0;
   }
 
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    max-width: $container-max-width;
-    margin: 0 auto;
-    padding: 0 60px;
-  
-    @media (max-width: $breakpoint-lg) {
-      padding: 0 40px;
-    }
-  
-    @media (max-width: $breakpoint-sm) {
-      padding: 0 20px;
-    }
+  @media (max-width: $breakpoint-sm) {
+    padding: $section-padding-mobile 0;
   }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 60px;
+
+  border: 1px red solid;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: 0 40px;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 0 20px;
+  }
+}
+
+.leftWrapper {
+  border: 1px red solid;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.rightWrapper {
+  border: 1px red solid;
+}
