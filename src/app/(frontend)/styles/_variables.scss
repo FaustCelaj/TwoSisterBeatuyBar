@@ -56,8 +56,14 @@ $section-padding-tablet: 100px;
 $section-padding-mobile: 80px;
 
 // Border radius
-$border-radius: 4px;
-$border-radius-lg: 8px;
+$border-radius-xs: 2px;
+$border-radius: 4px; 
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+$border-radius-2xl: 24px;
+$border-radius-3xl: 32px;
+$border-radius-full: 9999px;
 
 // Breakpoints
 $breakpoint-sm: 480px; // Mobile
