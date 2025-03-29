@@ -3,6 +3,7 @@
 import TemplateSpace from './components/TemplateSpace'
 import AboutIntro from './components/section/aboutIntro/AboutIntro'
 import FAQSection from './components/section/faq/FAQSection'
+import Hero from './components/section/hero/Hero'
 import ServiceSection from './components/section/servicesGrid/ServiceSection'
 
 const aboutParagraphText =
@@ -11,6 +12,7 @@ const aboutParagraphText =
 export default function HomePage() {
   return (
     <main>
+      <Hero />
       <TemplateSpace />
       <AboutIntro value={aboutParagraphText} />
       <ServiceSection />
