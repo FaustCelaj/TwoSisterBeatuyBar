@@ -1,20 +1,17 @@
 'use client'
 
 import TemplateSpace from './components/TemplateSpace'
-import AboutIntro from './components/section/aboutIntro/AboutIntro'
+import AboutSection from './components/section/aboutIntro/AboutSection'
 import FAQSection from './components/section/faq/FAQSection'
 import Hero from './components/section/hero/Hero'
 import ServiceSection from './components/section/servicesGrid/ServiceSection'
-
-const aboutParagraphText =
-  'Welcome to Two Sisters Beauty Bar, where professional skincare meets personal connection. We founded our spa to create a space where you can relax, rejuvenate, and learn how to keep your skin glowing long after you leave us.'
 
 export default function HomePage() {
   return (
     <main>
       <Hero />
-      <TemplateSpace />
-      <AboutIntro value={aboutParagraphText} />
+      {/* <TemplateSpace /> */}
+      <AboutSection />
       <ServiceSection />
       <FAQSection isHomePage={true} />
       {/* add button to link about page (Meet you aesthicians)*/}

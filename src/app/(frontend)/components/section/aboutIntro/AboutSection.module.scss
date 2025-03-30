@@ -1,0 +1,27 @@
+@use '../../../styles/variables' as *;
+
+.section {
+  background-color: #D6E6F5;
+  height: 200vh;
+  width: 100%;
+  position: relative;
+  // padding-top: 50vh;
+}
+
+
+.container {
+  background-color: #0d2e5c;
+  height: 200vh;
+  overflow: hidden;
+  clip-path: circle(25% at 50% 50%);
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+
+.content {
+  // margin-top: 125vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

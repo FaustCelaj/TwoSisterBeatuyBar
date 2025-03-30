@@ -25,7 +25,7 @@ export const FAQCategories: CollectionConfig = {
     {
       name: 'services',
       type: 'relationship',
-      relationTo: 'services',
+      relationTo: 'service-categories',
       hasMany: true,
       label: 'Related Services',
       admin: {

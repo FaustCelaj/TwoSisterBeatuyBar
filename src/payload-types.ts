@@ -296,7 +296,7 @@ export interface FaqCategory {
   /**
    * Select services this FAQ category relates to (leave empty if general)
    */
-  services?: (string | Service)[] | null;
+  services?: (string | ServiceCategory)[] | null;
   /**
    * Check if this is a general FAQ category (not tied to specific services)
    */
